@@ -33,7 +33,7 @@ for column in categories:
 df.drop(columns=['categories'], inplace=True)
 
 # concatenate the original dataframe with the new `categories` dataframe
-df = pd.concat(objs=(df, categories))
+df = pd.concat(objs=(df, categories), axis=1)
 
 # drop duplicates
 df.drop_duplicates(inplace=True)
