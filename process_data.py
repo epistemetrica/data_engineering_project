@@ -28,6 +28,9 @@ for column in categories:
     
     # convert column from string to numeric
     categories[column] = pd.to_numeric(categories[column])
+    
+    #ensure 0 or 1 - note: some entries under "related" were listed as 2 instead of 1
+    categories[column] = categories[column].apply(lambda row: 0 if row == 0 else 1)
 
 # drop the original categories column from `df`
 df.drop(columns=['categories'], inplace=True)
