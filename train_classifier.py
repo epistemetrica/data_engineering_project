@@ -75,4 +75,5 @@ def main():
 
     return model
 
-main()
+if __name__ == '__main__':
+    main()
