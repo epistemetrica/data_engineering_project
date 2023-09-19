@@ -2,3 +2,4 @@ explore.ipynb
 categories.csv
 messages.csv
 apw_messages.db
+trained_model.pkl
