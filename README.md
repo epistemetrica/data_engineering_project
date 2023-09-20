@@ -7,16 +7,17 @@ The project is graded according to [this rubric](https://learn.udacity.com/nanod
 
 There are 4 parts to this project:
 1. An ETL Pipeline
-    - File: process_data.py
+    - File: data/process_data.py
     - Cleans data and loads into a SQLite database
 2. A Machine Learning Pipeline
-    - File: train_classifier.py
+    - File: models/train_classifier.py
     - Loads data from SQLite db
     - Processes text, trains and tunes ML model using GridSearchCV
     - Outputs results and exports model as a pickle file
 3. A Flask Web App
+    - File: app/run.py
     - This app is mostly provided by and hosted by Udacity
-4. The [github repository](https://github.com/epistemetrica/data_engineering_project)
+4. The [github repository](https://github.com/epistemetrica/data_engineering_project), including this README.md file. 
 
 ## Data
 
@@ -47,6 +48,16 @@ The following libraries are used:
 - train_test_split and GridSearchCV from sklearn.model_selection
 - classification_report from sklearn.metrics
 
-## NOTES FOR REVIEWER
+## Instructions:
+1. Run the following commands in the project's root directory to set up your database and model.
 
-I used this repo to work out the code, but finalized all code files in the Udacity Project IDE. The three primary files ran for me in that IDE, but will not run with the files in this repo due to differences in file names. Please let me know if you have questions. Thanks!  
+    - To run ETL pipeline that cleans data and stores in database
+        `python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db`
+    - To run ML pipeline that trains classifier and saves
+        `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
+
+2. Go to `app` directory: `cd app`
+
+3. Run your web app: `python run.py`
+
+4. Click the `PREVIEW` button to open the homepage. NOTE: The Udacity Project IDE includes a 'preview' button; I do not know how to launch the web app locally, so I will assume the reviewer has access to this 'preview' button in their environment.  
