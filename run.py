@@ -42,6 +42,19 @@ def index():
     # TODO: Below is an example - modify to extract data for your own visuals
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
+    #create top 5 categories variables 
+    categories_df = df[['related', 'request', 'offer',
+       'aid_related', 'medical_help', 'medical_products', 'search_and_rescue',
+       'security', 'military', 'child_alone', 'water', 'food', 'shelter',
+       'clothing', 'money', 'missing_people', 'refugees', 'death', 'other_aid',
+       'infrastructure_related', 'transport', 'buildings', 'electricity',
+       'tools', 'hospitals', 'shops', 'aid_centers', 'other_infrastructure',
+       'weather_related', 'floods', 'storm', 'fire', 'earthquake', 'cold',
+       'other_weather', 'direct_report']]
+    s = categories_df.sum(0)
+    top5_cats_df = categories_df[s.sort_values(ascending=False)[:5].index]
+    top5_categories = top5_cats_df.sum()
+    top5_categories_names = list(top5_categories.index)
     
     # create visuals
     # TODO: Below is an example - modify to create your own visuals
@@ -61,6 +74,24 @@ def index():
                 },
                 'xaxis': {
                     'title': "Genre"
+                }
+            }
+       },
+       {
+            'data': [
+                 Bar(
+                    x=top5_categories_names,
+                    y=top5_categories
+                 )
+            ],
+
+            'layout': {
+                'title': 'Top 5 Message Categories',
+                'yaxis': {
+                    'title': "Count"
+                },
+                'xaxis': {
+                    'title': "Category"
                 }
             }
         }
