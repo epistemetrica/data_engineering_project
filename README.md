@@ -46,3 +46,7 @@ The following libraries are used:
 - MultiOutputClassifier from sklearn.multioutput
 - train_test_split and GridSearchCV from sklearn.model_selection
 - classification_report from sklearn.metrics
+
+## NOTES FOR REVIEWER
+
+I used this repo to work out the code, but finalized all code files in the Udacity Project IDE. The three primary files ran for me in that IDE, but will not run with the files in this repo due to differences in file names. Please let me know if you have questions. Thanks! 
