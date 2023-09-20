@@ -8,7 +8,7 @@ The project is graded according to [this rubric](https://learn.udacity.com/nanod
 There are 4 parts to this project:
 1. An ETL Pipeline
     - File: process_data.py
-    - Cleans data and loads into a SQLite database hosted by Udacity
+    - Cleans data and loads into a SQLite database
 2. A Machine Learning Pipeline
     - File: train_classifier.py
     - Loads data from SQLite db
@@ -18,3 +18,31 @@ There are 4 parts to this project:
     - This app is mostly provided by and hosted by Udacity
 4. The [github repository](https://github.com/epistemetrica/data_engineering_project)
 
+## Data
+
+The data consists of two csv files provided by Udacity: categories.csv and messages.csv
+
+## Libraries
+
+The following libraries are used:
+- json
+- plotly
+- pandas
+- numpy
+- nltk
+- sys
+- re
+- pickle
+- WordNetLemmetizer from nltk.stem
+- work_tokenizer from nltk.tokenize
+- Flask
+- render_template, request, and jsonify from Flask
+- Bar from plotly.graph_objs
+- joblib (note the current version of joblib is a direct import; previous versions are imported from sklearn.externals)
+- create_engine from sqlalchemy
+- RandomForestClassifier from sklearn.ensemble
+- CountVectorizer and TfidfTransformer from sklearn.feature_extraction.text
+- Pipeline from sklearn.pipeline
+- MultiOutputClassifier from sklearn.multioutput
+- train_test_split and GridSearchCV from sklearn.model_selection
+- classification_report from sklearn.metrics
